@@ -9,11 +9,8 @@ namespace TaskEdisun.Models
     {
         private static List<ShawList> _AList;
         public int RememberDigit { get; set; }
-
         public string UserName { get; set; }
-
         public List<Extrasence> Extrasences { get; set; }
-
         public static List<ShawList> GetShawList
         {
             get { return _AList; }
