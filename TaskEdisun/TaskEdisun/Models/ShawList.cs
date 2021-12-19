@@ -23,7 +23,6 @@ namespace TaskEdisun.Models
         {
             _AList = new List<ShawList>();
         }
-
         public ShawList()
         {
             ShawList.GetShawList.Add(this);
