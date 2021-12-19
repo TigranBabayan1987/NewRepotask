@@ -9,10 +9,12 @@ namespace TaskEdisun.Controllers
     public class HomeController : Controller
     {
         static Dictionary<string, UserHistory> history = new Dictionary<string, UserHistory>();
+
         public ActionResult Index()
         {
             return View();
         }
+
         public ActionResult GuessNumber()
         {
             Session["userName"] = Request.Form["userName"];
@@ -39,6 +41,7 @@ namespace TaskEdisun.Controllers
 
             return View();
         }
+
         public ActionResult SetUpdateHistory()
         {
             int number = Convert.ToInt32(Request.Form["number"]);
@@ -111,7 +114,6 @@ namespace TaskEdisun.Controllers
 
             return new Extrasence(name, random.Next(0, 10), false);
         }
-
 
         private List<string> Extrasences = new List<string>
         {
