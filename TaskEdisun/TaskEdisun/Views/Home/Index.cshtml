@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @($"SessionId: {Session.SessionID}")
+</div>
+<div>
+    @using (Html.BeginForm("GuessNumber", "Home", FormMethod.Post))
+    {
+        <h3>Extrasence </h3>
+        <input type="text" name="userName" placeholder="Plice enter your name..." />
+        <input type="submit" value="Continue" />
+    }
+</div>

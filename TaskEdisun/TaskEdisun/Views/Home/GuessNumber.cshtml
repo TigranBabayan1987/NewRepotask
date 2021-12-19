@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Keep in mind number";
+}
+
+<div>
+    @($"SessionId: {Session.SessionID}")
+</div>
+<div>
+    @using (Html.BeginForm("SetUpdateHistory", "Home", FormMethod.Post))
+    {
+        <h3>@($"hi {Session["userName"]}! Keep in mind two-digit number?")</h3>
+
+        <input type="text" name="number" placeholder="..." />
+        <input type="submit" value="continue" />
+    }
+</div>
+

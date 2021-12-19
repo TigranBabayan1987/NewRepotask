@@ -1,0 +1,54 @@
+﻿@using TaskEdisun.Models
+@model IList<TaskEdisun.Models.ShawList>
+@{
+    ViewBag.Title = "SetUpdateHistory";
+}
+
+<h2>SetUpdateHistory</h2>
+
+
+@using (Html.BeginForm("SetUpdateHistory", "Home", FormMethod.Post))
+{
+    <h3>@($"hi {Session["userName"]}! Keep in mind two-digit number?")</h3>
+
+    <input type="text" name="number" placeholder="..." />
+    <input type="submit" value="continue" />
+}
+
+<h3>Passing Data From Controller To View using ViewData</h3>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<div>
+    <ol >
+        @foreach (var obj in Model)
+        {
+        <li>
+            <p>
+                RememberDigit:-    @obj.RememberDigit
+            </p>
+                <table width="100%">
+                    <tr>
+                        @foreach (var extrasence in obj.Extrasences)
+                        {
+
+                            <th>
+                                <p>Name :  @extrasence.ExtrasenceName</p>
+
+                                <p>Is Adjusting : @extrasence.IsTrue</p>
+
+                                <p>Current Reating : @extrasence.ExtrasenceReating</p>
+                            </th>
+
+                        }
+                    </tr>
+                </table>
+        </li>
+        }
+    </ol>
+
+
+</div>
